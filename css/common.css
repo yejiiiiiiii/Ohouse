@@ -1,0 +1,119 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1rem;
+}
+
+.header {
+    height: 6rem;
+    background-color: peachpuff;
+    position: relative;
+}
+
+.header .inner {
+    max-width: 168rem;
+    width: calc(100% - 2rem);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0 1rem;
+}
+
+.header .inner .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header .inner .logo img {}
+
+.header .inner .nav {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+
+}
+
+.header .inner .nav .category {
+    display: flex;
+
+}
+
+.header .inner .nav .gnb {
+    display: flex;
+    gap: 5rem;
+}
+
+.header .inner .nav .gnb>li {}
+
+.header .inner .nav .gnb>li .depth-01 {}
+
+.header .inner .nav .gnb>li .depth-02 {
+    display: flex;
+    gap: 4rem;
+    display: none;
+}
+
+.header .inner .nav .gnb>li .depth-02 li {}
+
+.header .inner .util {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    font-size: 1.6rem;
+}
+
+.header .inner .util .searchbox {}
+
+.header .inner .util .cart {}
+
+.header .inner .util .cart img {}
+
+.header .inner .util .user {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.header .inner .util .user a {}
+
+.header .inner .header_Swiper {
+    margin: 0 auto;
+    position: absolute;
+    top: 100%;
+}
+
+.header .inner .header_Swiper .swiper-wrapper {}
+
+.header .inner .header_Swiper .swiper-wrapper .swiper-slide {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.header .inner .header_Swiper .swiper-wrapper .swiper-slide .text {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header .inner .header_Swiper .swiper-wrapper .swiper-slide .text .up {
+    color: #F05656;
+}
+
+.header .inner .header_Swiper .swiper-wrapper .swiper-slide .text .down {
+    color: #35C5F0;
+}
+
+.header .inner .header_Swiper .swiper-wrapper .swiper-slide .text span {}
+
+.header .inner .header_Swiper .swiper-wrapper .swiper-slide .dropdown {}
+
+.header .inner .header_Swiper .swiper-wrapper .swiper-slide .dropdown img {}
+

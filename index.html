@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의집</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+
+            /* 2차메뉴 스크롤다운/업 */
+            let prevScrollBar = 0; //이전 스크롤 위치
+
+            $(window).on('scroll', function () {
+                let scrollBar = $(window).scrollTop(); //현재 스크롤 위치
+
+                console.log(prevScrollBar)
+                console.log(scrollBar)
+
+                //조건식 
+                //현재 스크롤바의 값이 이전 스크롤바의 값보다 클 때
+                //조건이 맞으면 header한테 클래스명 active 추가
+                //조건이 맞지 않으면 header한테 클래스명 active 제거
+                if (scrollBar > prevScrollBar) {
+                    $('.header .inner .depth-02').addClass('active');
+                } else {
+                    $('.header .inner .depth-02').removeClass('active');
+                }
+
+                prevScrollBar = scrollBar;
+
+            });
+
+            /* header 인기검색어 */
+            var swiper = new Swiper(".mySwiper", {
+                direction: "vertical",
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+            });
+
+            /* section-02 swiper */
+            var swiper = new Swiper(".sec02_Swiper", {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+            });
+
+            /* section-03 swiper */
+            var swiper = new Swiper(".sec03_Swiper", {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                direction: "horizontal",
+                mousewheel: true,
+            });
+
+            /* event swiper */
+            var swiper = new Swiper(".event", {
+                spaceBetween: 30,
+                centeredSlides: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header class="header">
+            <div class="inner">
+                <h1 class="logo">
+                    <img src="img/logo.svg" alt="">
+                </h1><!-- .logo end -->
+                <nav class="nav">
+                    <div class="category">
+                        <button type="button" class="menu">
+                            <img src="img/menu.svg" alt="">
+                            <p>카테고리</p>
+                        </button><!-- .menu end -->
+                    </div><!-- .category end -->
+                    <ul class="gnb">
+                        <li>
+                            <a href="#" class="depth-01">홈</a>
+                            <ul class="depth-02">
+                                <li><a href="#">홈</a></li>
+                                <li><a href="#">오늘의 취향</a></li>
+                                <li><a href="#">이벤트</a></li>
+                                <li><a href="#">행운출첵</a></li>
+                                <li><a href="#">개러지세일</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">커뮤니티</a>
+                            <ul class="depth-02">
+                                <li><a href="#">전체</a></li>
+                                <li><a href="#">꿀템발견</a></li>
+                                <li><a href="#">추천</a></li>
+                                <li><a href="#">#채널</a></li>
+                                <li><a href="#">집들이</a></li>
+                                <li><a href="#">3D인테리어</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">쇼핑</a>
+                            <ul class="depth-02">
+                                <li><a href="#">전체</a></li>
+                                <li><a href="#">베스트</a></li>
+                                <li><a href="#">오늘의딜</a></li>
+                                <li><a href="#">단독상품</a></li>
+                                <li><a href="#">리퍼마켓</a></li>
+                                <li><a href="#">오마트</a></li>
+                                <li><a href="#">원하는날도착</a></li>
+                                <li><a href="#">기획전</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">인테리어/생활</a>
+                            <ul class="depth-02">
+                                <li><a href="#">전체</a></li>
+                                <li><a href="#">주거공간시공</a></li>
+                                <li><a href="#">부분시공</a></li>
+                                <li><a href="#">아파트시공사례</a></li>
+                                <li><a href="#">시공자재랭킹</a></li>
+                                <li><a href="#">제품설치</a></li>
+                                <li><a href="#">이사</a></li>
+                                <li><a href="#">집보기체크리스트</a></li>
+                            </ul>
+                        </li>
+                    </ul><!-- .gnb end -->
+                </nav><!-- .nav end -->
+                <div class="util">
+                    <div class="searchbox">
+                        <img src="img/Union.svg" alt="">
+                    </div><!-- .searchbox end -->
+                    <div class="cart">
+                        <img src="img/Vector.svg" alt="">
+                    </div>
+                    <div class="user">
+                        <a href="#">로그인</a>
+                        <a href="#">회원가입</a>
+                        <a href="#">고객센터</a>
+                    </div><!-- .user end -->
+                </div><!-- .util end -->
+
+                <div class="swiper header_Swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="text">
+                                <span>1</span>
+                                <span class="new">new</span>
+                                <span>잭슨카멜레온</span>
+                            </div><!-- .text end -->
+                            <button type="button" class="dropdown">
+                                <img src="img/dropdown.svg" alt="">
+                            </button><!-- dropdown end -->
+                        </div><!-- swiper-slide -->
+
+                        <div class="swiper-slide">
+                            <div class="text">
+                                <span>2</span>
+                                <span class="up">▲</span>
+                                <span>대형러그</span>
+                            </div><!-- .text end -->
+                            <button type="button" class="dropdown">
+                                <img src="img/dropdown.svg" alt="">
+                            </button><!-- dropdown end -->
+                        </div><!-- swiper-slide -->
+
+                        <div class="swiper-slide">
+                            <div class="text">
+                                <span>3</span>
+                                <span class="up">▲</span>
+                                <span>테라리움</span>
+                            </div><!-- .text end -->
+                            <button type="button" class="dropdown">
+                                <img src="img/dropdown.svg" alt="">
+                            </button><!-- dropdown end -->
+                        </div><!-- swiper-slide -->
+
+                        <div class="swiper-slide">
+                            <div class="text">
+                                <span>4</span>
+                                <span class="up">▲</span>
+                                <span>반타원 테이블</span>
+                            </div><!-- .text end -->
+                            <button type="button" class="dropdown">
+                                <img src="img/dropdown.svg" alt="">
+                            </button><!-- dropdown end -->
+                        </div><!-- swiper-slide -->
+
+                        <div class="swiper-slide">
+                            <div class="text">
+                                <span>5</span>
+                                <span class="up">▲</span>
+                                <span>디귿철제수납함</span>
+                            </div><!-- .text end -->
+                            <button type="button" class="dropdown">
+                                <img src="img/dropdown.svg" alt="">
+                            </button><!-- dropdown end -->
+                        </div><!-- swiper-slide -->
+
+                        <div class="swiper-slide">
+                            <div class="text">
+                                <span>6</span>
+                                <span class="new">new</span>
+                                <span>붙이는 조명</span>
+                            </div><!-- .text end -->
+                            <button type="button" class="dropdown">
+                                <img src="img/dropdown.svg" alt="">
+                            </button><!-- dropdown end -->
+                        </div><!-- swiper-slide -->
+
+                        <div class="swiper-slide">
+                            <div class="text">
+                                <span>7</span>
+                                <span class="new">new</span>
+                                <span>모도리</span>
+                            </div><!-- .text end -->
+                            <button type="button" class="dropdown">
+                                <img src="img/dropdown.svg" alt="">
+                            </button><!-- dropdown end -->
+                        </div><!-- swiper-slide -->
+
+                        <div class="swiper-slide">
+                            <div class="text">
+                                <span>8</span>
+                                <span class="new">new</span>
+                                <span>브라운체온계</span>
+                            </div><!-- .text end -->
+                            <button type="button" class="dropdown">
+                                <img src="img/dropdown.svg" alt="">
+                            </button><!-- dropdown end -->
+                        </div><!-- swiper-slide -->
+
+                        <div class="swiper-slide">
+                            <div class="text">
+                                <span>9</span>
+                                <span class="up">▲</span>
+                                <span>안락의자</span>
+                            </div><!-- .text end -->
+                            <button type="button" class="dropdown">
+                                <img src="img/dropdown.svg" alt="">
+                            </button><!-- dropdown end -->
+                        </div><!-- swiper-slide -->
+
+                        <div class="swiper-slide">
+                            <div class="text">
+                                <span>10</span>
+                                <span class="down">▼</span>
+                                <span>가리개 커튼</span>
+                            </div><!-- .text end -->
+                            <button type="button" class="dropdown">
+                                <img src="img/dropdown.svg" alt="">
+                            </button><!-- dropdown end -->
+                        </div><!-- swiper-slide -->
+
+                    </div><!-- swiper-wrapper -->
+                </div><!-- header_Swiper -->
+
+            </div><!-- .inner end -->
+        </header><!-- .header end -->
+
+        <main class="main">
+            <section class="main_visual">
+                <div class="inner">
+                    <div class="image_box">
+                        <img src="img/173068539147785930.svg" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>월간집들이 | 이 달의 집들이를 소개합니다 💎</h2>
+                        <button type="button" class="button">
+                            <a href="#">자세히 보러가기</a>
+                        </button>
+                        <div class="tag">
+                            <img src="img/254302779379840.jpg" alt="">
+                            <span>집들이에디터</span>
+                        </div>
+                    </div><!-- .text end -->
+                </div><!-- .inner end -->
+            </section><!-- .main_visual end -->
+
+            <section class="section section-01">
+                <div class="inner">
+                    <div class="title">
+                        <h3>오늘의 추천 집들이 구경해보세요🧐</h3>
+                        <a href="#">더보기</a>
+                    </div><!-- .title end -->
+                    <div class="item_wrap">
+                        <div class="item">
+                            <img src="img/349525045006400.jpg" alt="">
+                            <p>우드+패브릭으로 감성 충만하게 채운 4평 방 스타일링법</p>
+                        </div><!-- .item end -->
+                        <div class="item">
+                            <img src="img/339278655709312.jpg" alt="">
+                            <p>36년 된 구축, 체리몰딩 그대로 감각적인 빈티지 무드 완성!</p>
+                        </div><!-- .item end -->
+                        <div class="item">
+                            <img src="img/174497317415815607.jpg" alt="">
+                            <p>[왓츠인마이홈] 대체 불가능한 무드!✨ 진한 빈티지 감성템 10</p>
+                        </div><!-- .item end -->
+                        <div class="item">
+                            <img src="img/173753042937101049.jpg" alt="">
+                            <p>방 꾸미기에 남들보다 몇 억배😮는 진심인 나의 기록!✍️</p>
+                        </div><!-- .item end -->
+                    </div><!-- .item_wrap end -->
+                </div><!-- .inner end -->
+            </section><!-- .section-01 end -->
+
+            <section class="section section-02">
+                <div class="inner">
+                    <div class="title">
+                        <h3>오늘의딜</h3>
+                        <div class="timer">
+                            <img src="img/timer.svg" alt="">
+                            <!-- 타이머 script code 사용 예정 -->
+                        </div><!-- .timer end -->
+                        <p>기간 한정 최저가 도전!</p>
+                        <button type="button" class="button">
+                            판매상품 보러가기
+                        </button>
+                    </div><!-- .title end -->
+
+                    <div class="swiper sec02_Swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="image_box">
+                                    <img src="img/section02(1).jpg" alt="" class="main">
+                                    <img src="img/bookmark.svg" alt="" class="mark">
+                                </div><!-- .image_box end -->
+                                <div class="text">
+                                    <span class="brand"></span>
+                                    <p class="name"></p>
+                                    <div class="pricing">
+                                        <div class="discount"></div><!-- .discount end -->
+                                        <div class="price"></div><!-- .price end -->
+                                        <div class="cost"></div><!-- .cost end -->
+                                    </div><!-- .pricing end -->
+                                    <div class="rating">
+                                        <img src="img/star.svg" alt="별점" class="star">
+                                        <p class="rate"></p><!-- .rate end -->
+                                        <span class="review"></span><!-- .review end -->
+                                    </div><!-- .rating end -->
+                                    <div class="coupon">
+                                        <div>
+                                            <img src="img/무료배송.svg" alt="무료배송">
+                                            <img src="img/특가.svg" alt="특가">
+                                        </div>
+                                        <div class="card">
+                                            <img src="img/card.svg" alt="카드할인">
+                                            <p>최대 10% 할인</p>
+                                        </div><!-- .card end -->
+                                    </div><!-- .coupon end -->
+                                </div><!-- .text end -->
+                            </div><!-- swiper-slide 1-->
+
+                            <div class="swiper-slide">
+                                <div class="image_box">
+                                    <img src="img/section02(2).jpg" alt="">
+                                    <img src="img/bookmark.svg" alt="" class="mark">
+                                </div><!-- .image_box end -->
+                                <div class="text">
+                                    <span class="brand"></span>
+                                    <p class="name"></p>
+                                    <div class="pricing">
+                                        <div class="discount"></div><!-- .discount end -->
+                                        <div class="price"></div><!-- .price end -->
+                                        <div class="cost"></div><!-- .cost end -->
+                                    </div><!-- .pricing end -->
+                                    <div class="rating">
+                                        <img src="img/star.svg" alt="별점" class="star">
+                                        <p class="rate"></p><!-- .rate end -->
+                                        <span class="review"></span><!-- .review end -->
+                                    </div><!-- .rating end -->
+                                    <div class="coupon">
+                                        <div>
+                                            <img src="img/무료배송.svg" alt="무료배송">
+                                            <img src="img/특가.svg" alt="특가">
+                                        </div>
+                                        <div class="card">
+                                            <img src="img/card.svg" alt="카드할인">
+                                            <p>최대 10% 할인</p>
+                                        </div><!-- .card end -->
+                                    </div><!-- .coupon end -->
+                                </div><!-- .text end -->
+                            </div><!-- swiper-slide 2-->
+
+                            <div class="swiper-slide">
+                                <div class="image_box">
+                                    <img src="img/section02(3).jpg" alt="">
+                                    <img src="img/bookmark.svg" alt="" class="mark">
+                                </div><!-- .image_box end -->
+                                <div class="text">
+                                    <span class="brand"></span>
+                                    <p class="name"></p>
+                                    <div class="pricing">
+                                        <div class="discount"></div><!-- .discount end -->
+                                        <div class="price"></div><!-- .price end -->
+                                        <div class="cost"></div><!-- .cost end -->
+                                    </div><!-- .pricing end -->
+                                    <div class="rating">
+                                        <img src="img/star.svg" alt="별점" class="star">
+                                        <p class="rate"></p><!-- .rate end -->
+                                        <span class="review"></span><!-- .review end -->
+                                    </div><!-- .rating end -->
+                                    <div class="coupon">
+                                        <div>
+                                            <img src="img/무료배송.svg" alt="무료배송">
+                                            <img src="img/특가.svg" alt="특가">
+                                        </div>
+                                        <div class="card">
+                                            <img src="img/card.svg" alt="카드할인">
+                                            <p>최대 10% 할인</p>
+                                        </div><!-- .card end -->
+                                    </div><!-- .coupon end -->
+                                </div><!-- .text end -->
+                            </div><!-- swiper-slide 3-->
+
+                            <div class="swiper-slide">
+                                <div class="image_box">
+                                    <img src="img/section02(3).jpg" alt="">
+                                    <img src="img/bookmark.svg" alt="" class="mark">
+                                </div><!-- .image_box end -->
+                                <div class="text">
+                                    <span class="brand"></span>
+                                    <p class="name"></p>
+                                    <div class="pricing">
+                                        <div class="discount"></div><!-- .discount end -->
+                                        <div class="price"></div><!-- .price end -->
+                                        <div class="cost"></div><!-- .cost end -->
+                                    </div><!-- .pricing end -->
+                                    <div class="rating">
+                                        <img src="img/star.svg" alt="별점" class="star">
+                                        <p class="rate"></p><!-- .rate end -->
+                                        <span class="review"></span><!-- .review end -->
+                                    </div><!-- .rating end -->
+                                    <div class="coupon">
+                                        <div>
+                                            <img src="img/무료배송.svg" alt="무료배송">
+                                            <img src="img/특가.svg" alt="특가">
+                                        </div>
+                                        <div class="card">
+                                            <img src="img/card.svg" alt="카드할인">
+                                            <p>최대 10% 할인</p>
+                                        </div><!-- .card end -->
+                                    </div><!-- .coupon end -->
+                                </div><!-- .text end -->
+                            </div><!-- swiper-slide 4-->
+
+                            <div class="swiper-slide">
+                                <div class="image_box">
+                                    <img src="img/section02(3).jpg" alt="">
+                                    <img src="img/bookmark.svg" alt="" class="mark">
+                                </div><!-- .image_box end -->
+                                <div class="text">
+                                    <span class="brand"></span>
+                                    <p class="name"></p>
+                                    <div class="pricing">
+                                        <div class="discount"></div><!-- .discount end -->
+                                        <div class="price"></div><!-- .price end -->
+                                        <div class="cost"></div><!-- .cost end -->
+                                    </div><!-- .pricing end -->
+                                    <div class="rating">
+                                        <img src="img/star.svg" alt="별점" class="star">
+                                        <p class="rate"></p><!-- .rate end -->
+                                        <span class="review"></span><!-- .review end -->
+                                    </div><!-- .rating end -->
+                                    <div class="coupon">
+                                        <div>
+                                            <img src="img/무료배송.svg" alt="무료배송">
+                                            <img src="img/특가.svg" alt="특가">
+                                        </div>
+                                        <div class="card">
+                                            <img src="img/card.svg" alt="카드할인">
+                                            <p>최대 10% 할인</p>
+                                        </div><!-- .card end -->
+                                    </div><!-- .coupon end -->
+                                </div><!-- .text end -->
+                            </div><!-- swiper-slide 5-->
+
+                            <div class="swiper-slide">
+                                <div class="image_box">
+                                    <img src="img/section02(3).jpg" alt="">
+                                    <img src="img/bookmark.svg" alt="" class="mark">
+                                </div><!-- .image_box end -->
+                                <div class="text">
+                                    <span class="brand"></span>
+                                    <p class="name"></p>
+                                    <div class="pricing">
+                                        <div class="discount"></div><!-- .discount end -->
+                                        <div class="price"></div><!-- .price end -->
+                                        <div class="cost"></div><!-- .cost end -->
+                                    </div><!-- .pricing end -->
+                                    <div class="rating">
+                                        <img src="img/star.svg" alt="별점" class="star">
+                                        <p class="rate"></p><!-- .rate end -->
+                                        <span class="review"></span><!-- .review end -->
+                                    </div><!-- .rating end -->
+                                    <div class="coupon">
+                                        <div>
+                                            <img src="img/무료배송.svg" alt="무료배송">
+                                            <img src="img/특가.svg" alt="특가">
+                                        </div>
+                                        <div class="card">
+                                            <img src="img/card.svg" alt="카드할인">
+                                            <p>최대 10% 할인</p>
+                                        </div><!-- .card end -->
+                                    </div><!-- .coupon end -->
+                                </div><!-- .text end -->
+                            </div><!-- swiper-slide 6-->
+
+                            <div class="swiper-slide">
+                                <div class="image_box">
+                                    <img src="img/section02(3).jpg" alt="">
+                                    <img src="img/bookmark.svg" alt="" class="mark">
+                                </div><!-- .image_box end -->
+                                <div class="text">
+                                    <span class="brand"></span>
+                                    <p class="name"></p>
+                                    <div class="pricing">
+                                        <div class="discount"></div><!-- .discount end -->
+                                        <div class="price"></div><!-- .price end -->
+                                        <div class="cost"></div><!-- .cost end -->
+                                    </div><!-- .pricing end -->
+                                    <div class="rating">
+                                        <img src="img/star.svg" alt="별점" class="star">
+                                        <p class="rate"></p><!-- .rate end -->
+                                        <span class="review"></span><!-- .review end -->
+                                    </div><!-- .rating end -->
+                                    <div class="coupon">
+                                        <div>
+                                            <img src="img/무료배송.svg" alt="무료배송">
+                                            <img src="img/특가.svg" alt="특가">
+                                        </div>
+                                        <div class="card">
+                                            <img src="img/card.svg" alt="카드할인">
+                                            <p>최대 10% 할인</p>
+                                        </div><!-- .card end -->
+                                    </div><!-- .coupon end -->
+                                </div><!-- .text end -->
+                            </div><!-- swiper-slide 7-->
+
+                            <div class="swiper-slide">
+                                <div class="image_box">
+                                    <img src="img/section02(3).jpg" alt="">
+                                    <img src="img/bookmark.svg" alt="" class="mark">
+                                </div><!-- .image_box end -->
+                                <div class="text">
+                                    <span class="brand"></span>
+                                    <p class="name"></p>
+                                    <div class="pricing">
+                                        <div class="discount"></div><!-- .discount end -->
+                                        <div class="price"></div><!-- .price end -->
+                                        <div class="cost"></div><!-- .cost end -->
+                                    </div><!-- .pricing end -->
+                                    <div class="rating">
+                                        <img src="img/star.svg" alt="별점" class="star">
+                                        <p class="rate"></p><!-- .rate end -->
+                                        <span class="review"></span><!-- .review end -->
+                                    </div><!-- .rating end -->
+                                    <div class="coupon">
+                                        <div>
+                                            <img src="img/무료배송.svg" alt="무료배송">
+                                            <img src="img/특가.svg" alt="특가">
+                                        </div>
+                                        <div class="card">
+                                            <img src="img/card.svg" alt="카드할인">
+                                            <p>최대 10% 할인</p>
+                                        </div><!-- .card end -->
+                                    </div><!-- .coupon end -->
+                                </div><!-- .text end -->
+                            </div><!-- swiper-slide 8-->
+
+                        </div><!-- swiper-wrapper -->
+                        <div class="swiper-pagination"></div>
+                    </div><!-- sec02_Swiper -->
+                </div><!-- .inner end -->
+            </section><!-- .section-02 end -->
+
+            <section class="section section-03">
+                <div class="title">
+                    <h3>베스트</h3>
+                    <a href="#">더보기</a>
+                </div><!-- .title end -->
+                <!-- Swiper -->
+                <div class="swiper sec03_Swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#">전체</a>
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#">가구</a>
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#">패브릭</a>
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#">가전·디지털</a>
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#">주방용품</a>
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#">식품</a>
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#">데코·식물</a>
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#">조명</a>
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#">수납·정리</a>
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#">생활용품</a>
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#">생필품</a>
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#">유아·아동</a>
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#">반려동물</a>
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#">캠핑·레저</a>
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#">공구·DIY</a>
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#">인테리어시공</a>
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#">렌탈·구독</a>
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#">장보기</a>
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#">혼수·신혼</a>
+                        </div><!-- swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#">Binary shop</a>
+                        </div><!-- swiper-slide -->
+                    </div><!-- swiper-wrapper -->
+                </div><!-- sec03_Swiper -->
+                <div class="item_wrap">
+                    <div class="item">
+                        <div class="image_box">
+                            <img src="img/section03(1).jpg" alt="" class="main">
+                            <img src="img/label.svg" alt="순위" class="label">
+                            <img src="img/bookmark.svg" alt="저장" class="mark">
+                        </div><!-- .image_box end -->
+                        <div class="text">
+                            <span class="brand"></span>
+                            <p class="name"></p>
+                            <div class="pricing">
+                                <div class="discount"></div><!-- .discount end -->
+                                <div class="price"></div><!-- .price end -->
+                                <div class="cost"></div><!-- .cost end -->
+                            </div><!-- .pricing end -->
+                            <div class="rating">
+                                <img src="img/star.svg" alt="별점" class="star">
+                                <p class="rate"></p><!-- .rate end -->
+                                <span class="review"></span><!-- .review end -->
+                            </div><!-- .rating end -->
+                            <div class="coupon">
+                                <div>
+                                    <img src="img/무료배송.svg" alt="무료배송">
+                                    <img src="img/특가.svg" alt="특가">
+                                </div>
+                                <div class="card">
+                                    <img src="img/card.svg" alt="카드할인">
+                                    <p>최대 10% 할인</p>
+                                </div><!-- .card end -->
+                            </div><!-- .coupon end -->
+                        </div><!-- .text end -->
+                    </div><!-- .item end -->
+
+                    <div class="item">
+                        <div class="image_box">
+                            <img src="img/section03(2).jpg" alt="" class="main">
+                            <img src="img/label.svg" alt="순위" class="label">
+                            <img src="img/bookmark.svg" alt="저장" class="mark">
+                        </div><!-- .image_box end -->
+                        <div class="text">
+                            <span class="brand"></span>
+                            <p class="name"></p>
+                            <div class="pricing">
+                                <div class="discount"></div><!-- .discount end -->
+                                <div class="price"></div><!-- .price end -->
+                                <div class="cost"></div><!-- .cost end -->
+                            </div><!-- .pricing end -->
+                            <div class="rating">
+                                <img src="img/star.svg" alt="별점" class="star">
+                                <p class="rate"></p><!-- .rate end -->
+                                <span class="review"></span><!-- .review end -->
+                            </div><!-- .rating end -->
+                            <div class="coupon">
+                                <div>
+                                    <img src="img/무료배송.svg" alt="무료배송">
+                                    <img src="img/특가.svg" alt="특가">
+                                </div>
+                                <div class="card">
+                                    <img src="img/card.svg" alt="카드할인">
+                                    <p>최대 10% 할인</p>
+                                </div><!-- .card end -->
+                            </div><!-- .coupon end -->
+                        </div><!-- .text end -->
+                    </div><!-- .item end -->
+
+                    <div class="item">
+                        <div class="image_box">
+                            <img src="img/section03(3).jpg" alt="" class="main">
+                            <img src="img/label.svg" alt="순위" class="label">
+                            <img src="img/bookmark.svg" alt="저장" class="mark">
+                        </div><!-- .image_box end -->
+                        <div class="text">
+                            <span class="brand"></span>
+                            <p class="name"></p>
+                            <div class="pricing">
+                                <div class="discount"></div><!-- .discount end -->
+                                <div class="price"></div><!-- .price end -->
+                                <div class="cost"></div><!-- .cost end -->
+                            </div><!-- .pricing end -->
+                            <div class="rating">
+                                <img src="img/star.svg" alt="별점" class="star">
+                                <p class="rate"></p><!-- .rate end -->
+                                <span class="review"></span><!-- .review end -->
+                            </div><!-- .rating end -->
+                            <div class="coupon">
+                                <div>
+                                    <img src="img/무료배송.svg" alt="무료배송">
+                                    <img src="img/특가.svg" alt="특가">
+                                </div>
+                                <div class="card">
+                                    <img src="img/card.svg" alt="카드할인">
+                                    <p>최대 10% 할인</p>
+                                </div><!-- .card end -->
+                            </div><!-- .coupon end -->
+                        </div><!-- .text end -->
+                    </div><!-- .item end -->
+                </div><!-- .item_wrap end -->
+            </section><!-- .section-03 end -->
+
+            <div class="swiper event">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/event(1).jpg" alt="이벤트배너" class="banner">
+                    </div><!-- swiper-slide -->
+                    <div class="swiper-slide">
+                        <img src="img/event(2).jpg" alt="이벤트배너" class="banner">
+                    </div><!-- swiper-slide -->
+                </div><!-- swiper-wrapper -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div><!-- event -->
+
+            <section class="section section-04">
+                <div class="title">
+                    <h3>오늘의 기획전</h3>
+                    <a href="#">더보기</a>
+                </div><!-- .title end -->
+
+                <div class="content_wrap">
+                    <div class="content">
+                        <div class="image_box">
+                            <img src="img/section04(1).jpg" alt="기획전메인" class="img">
+                        </div>
+                        <div class="item_wrap">
+                            <div class="item">
+                                <img src="img/section04-1(1).jpg" alt="">
+                                <div class="text">
+                                    <span class="brand"></span>
+                                    <p class="name"></p>
+                                    <div class="pricing">
+                                        <div class="discount"></div><!-- .discount end -->
+                                        <div class="price"></div><!-- .price end -->
+                                        <div class="cost"></div><!-- .cost end -->
+                                    </div><!-- .pricing end -->
+                                    <div class="rating">
+                                        <img src="img/star.svg" alt="별점" class="star">
+                                        <p class="rate"></p><!-- .rate end -->
+                                        <span class="review"></span><!-- .review end -->
+                                    </div><!-- .rating end -->
+                                </div><!-- .text end -->
+                            </div><!-- .item end -->
+
+                            <div class="item">
+                                <img src="img/section04-1(1).jpg" alt="">
+                                <div class="text_box">
+                                    <span class="brand"></span>
+                                    <p class="name"></p>
+                                    <div class="pricing">
+                                        <div class="discount"></div><!-- .discount end -->
+                                        <div class="price"></div><!-- .price end -->
+                                        <div class="cost"></div><!-- .cost end -->
+                                    </div><!-- .pricing end -->
+                                    <div class="rating">
+                                        <img src="img/star.svg" alt="별점" class="star">
+                                        <p class="rate"></p><!-- .rate end -->
+                                        <span class="review"></span><!-- .review end -->
+                                    </div><!-- .rating end -->
+                                </div><!-- .text_box end -->
+                            </div><!-- .item end -->
+
+                            <div class="item">
+                                <img src="img/section04-1(1).jpg" alt="">
+                                <div class="text_box">
+                                    <span class="brand"></span>
+                                    <p class="name"></p>
+                                    <div class="pricing">
+                                        <div class="discount"></div><!-- .discount end -->
+                                        <div class="price"></div><!-- .price end -->
+                                        <div class="cost"></div><!-- .cost end -->
+                                    </div><!-- .pricing end -->
+                                    <div class="rating">
+                                        <img src="img/star.svg" alt="별점" class="star">
+                                        <p class="rate"></p><!-- .rate end -->
+                                        <span class="review"></span><!-- .review end -->
+                                    </div><!-- .rating end -->
+                                </div><!-- .text_box end -->
+                            </div><!-- .item end -->
+                        </div><!-- .item_wrap end -->
+                    </div><!-- .content end -->
+
+                    <div class="content">
+                        <div class="image_box">
+                            <img src="img/section04(1).jpg" alt="기획전메인" class="img">
+                        </div>
+                        <div class="item_wrap">
+                            <div class="item">
+                                <img src="img/section04-1(1).jpg" alt="">
+                                <div class="text_box">
+                                    <span class="brand"></span>
+                                    <p class="name"></p>
+                                    <div class="pricing">
+                                        <div class="discount"></div><!-- .discount end -->
+                                        <div class="price"></div><!-- .price end -->
+                                        <div class="cost"></div><!-- .cost end -->
+                                    </div><!-- .pricing end -->
+                                    <div class="rating">
+                                        <img src="img/star.svg" alt="별점" class="star">
+                                        <p class="rate"></p><!-- .rate end -->
+                                        <span class="review"></span><!-- .review end -->
+                                    </div><!-- .rating end -->
+                                </div><!-- .text_box end -->
+                            </div><!-- .item end -->
+
+                            <div class="item">
+                                <img src="img/section04-1(1).jpg" alt="">
+                                <div class="text_box">
+                                    <span class="brand"></span>
+                                    <p class="name"></p>
+                                    <div class="pricing">
+                                        <div class="discount"></div><!-- .discount end -->
+                                        <div class="price"></div><!-- .price end -->
+                                        <div class="cost"></div><!-- .cost end -->
+                                    </div><!-- .pricing end -->
+                                    <div class="rating">
+                                        <img src="img/star.svg" alt="별점" class="star">
+                                        <p class="rate"></p><!-- .rate end -->
+                                        <span class="review"></span><!-- .review end -->
+                                    </div><!-- .rating end -->
+                                </div><!-- .text_box end -->
+                            </div><!-- .item end -->
+
+                            <div class="item">
+                                <img src="img/section04-1(1).jpg" alt="">
+                                <div class="text_box">
+                                    <span class="brand"></span>
+                                    <p class="name"></p>
+                                    <div class="pricing">
+                                        <div class="discount"></div><!-- .discount end -->
+                                        <div class="price"></div><!-- .price end -->
+                                        <div class="cost"></div><!-- .cost end -->
+                                    </div><!-- .pricing end -->
+                                    <div class="rating">
+                                        <img src="img/star.svg" alt="별점" class="star">
+                                        <p class="rate"></p><!-- .rate end -->
+                                        <span class="review"></span><!-- .review end -->
+                                    </div><!-- .rating end -->
+                                </div><!-- .text_box end -->
+                            </div><!-- .item end -->
+                        </div><!-- .item_wrap end -->
+                    </div><!-- .content end -->
+
+                    <div class="content">
+                        <div class="image_box">
+                            <img src="img/section04(1).jpg" alt="기획전메인" class="img">
+                        </div>
+                        <div class="item_wrap">
+                            <div class="item">
+                                <img src="img/section04-1(1).jpg" alt="">
+                                <div class="text_box">
+                                    <span class="brand"></span>
+                                    <p class="name"></p>
+                                    <div class="pricing">
+                                        <div class="discount"></div><!-- .discount end -->
+                                        <div class="price"></div><!-- .price end -->
+                                        <div class="cost"></div><!-- .cost end -->
+                                    </div><!-- .pricing end -->
+                                    <div class="rating">
+                                        <img src="img/star.svg" alt="별점" class="star">
+                                        <p class="rate"></p><!-- .rate end -->
+                                        <span class="review"></span><!-- .review end -->
+                                    </div><!-- .rating end -->
+                                </div><!-- .text_box end -->
+                            </div><!-- .item end -->
+
+                            <div class="item">
+                                <img src="img/section04-1(1).jpg" alt="">
+                                <div class="text_box">
+                                    <span class="brand"></span>
+                                    <p class="name"></p>
+                                    <div class="pricing">
+                                        <div class="discount"></div><!-- .discount end -->
+                                        <div class="price"></div><!-- .price end -->
+                                        <div class="cost"></div><!-- .cost end -->
+                                    </div><!-- .pricing end -->
+                                    <div class="rating">
+                                        <img src="img/star.svg" alt="별점" class="star">
+                                        <p class="rate"></p><!-- .rate end -->
+                                        <span class="review"></span><!-- .review end -->
+                                    </div><!-- .rating end -->
+                                </div><!-- .text_box end -->
+                            </div><!-- .item end -->
+
+                            <div class="item">
+                                <img src="img/section04-1(1).jpg" alt="">
+                                <div class="text_box">
+                                    <span class="brand"></span>
+                                    <p class="name"></p>
+                                    <div class="pricing">
+                                        <div class="discount"></div><!-- .discount end -->
+                                        <div class="price"></div><!-- .price end -->
+                                        <div class="cost"></div><!-- .cost end -->
+                                    </div><!-- .pricing end -->
+                                    <div class="rating">
+                                        <img src="img/star.svg" alt="별점" class="star">
+                                        <p class="rate"></p><!-- .rate end -->
+                                        <span class="review"></span><!-- .review end -->
+                                    </div><!-- .rating end -->
+                                </div><!-- .text_box end -->
+                            </div><!-- .item end -->
+                        </div><!-- .item_wrap end -->
+                    </div><!-- .content end -->
+                </div><!-- .content_wrap end -->
+            </section><!-- .section-04 end -->
+
+            <section class="section section-05">
+                <div class="title">
+                    <div>
+                        <h3>오늘의 기획전</h3>
+                        <span>매주 새롭게 만나는 '취향의 발견'</span>
+                    </div>
+                    <a href="#">더보기</a>
+                </div><!-- .title end -->
+                <div class="content_wrap">
+                    <div class="image_box">
+                        <img src="img/section05.jpg" alt="메인이미지">
+                    </div><!-- .image_box end -->
+                    <div class="text_box">
+                        <h6>어느 집에도 잘 어울리는 오브제 모음</h6>
+                        <p>컬러가 무난한 오브제들은 어느 톤의 집에나 다 잘 어울리잖아요.
+                            컬러풀한 인테리어 보단 저 처럼 편안 모던한 컬러를 추구하신다면
+                            맘에 쏙 드실 오브제들을 소개해드릴게요.</p>
+                        <div class="img">
+                            <img src="img/section05(1).jpg" alt="">
+                            <img src="img/section05(2).jpg" alt="">
+                            <img src="img/section05(3).jpg" alt="">
+                        </div><!-- .img end -->
+                    </div><!-- .text_box end -->
+                </div><!-- .content_wrap end -->
+            </section><!-- .section-05 end -->
+
+            <section class="section section-06">
+                <div class="title">
+                    <div>
+                        <h3>46month</h3>
+                        <span>이달의 브랜드</span>
+                    </div>
+                    <a href="#">더보기</a>
+                </div><!-- .title end -->
+                <div class="content_wrap">
+                    <div class="image_box">
+                        <img src="img/section06.jpg" alt="">
+                    </div><!-- .image end -->
+                    <div class="text_box">
+
+                    </div><!-- .text_box end -->
+                    <div class="item_wrap">
+                        <div class="item">
+                            <img src="img/section06(1).jpg" alt="">
+                            <div class="text">
+                                <span class="brand"></span>
+                                <p class="name"></p>
+                                <div class="pricing">
+                                    <div class="discount"></div><!-- .discount end -->
+                                    <div class="price"></div><!-- .price end -->
+                                    <div class="cost"></div><!-- .cost end -->
+                                </div><!-- .pricing end -->
+                                <div class="rating">
+                                    <img src="img/star.svg" alt="별점" class="star">
+                                    <p class="rate"></p><!-- .rate end -->
+                                    <span class="review"></span><!-- .review end -->
+                                </div><!-- .rating end -->
+                            </div><!-- .text end -->
+                        </div><!-- .item end -->
+
+                        <div class="item">
+                            <img src="img/section06(2).jpg" alt="">
+                            <div class="text">
+                                <span class="brand"></span>
+                                <p class="name"></p>
+                                <div class="pricing">
+                                    <div class="discount"></div><!-- .discount end -->
+                                    <div class="price"></div><!-- .price end -->
+                                    <div class="cost"></div><!-- .cost end -->
+                                </div><!-- .pricing end -->
+                                <div class="rating">
+                                    <img src="img/star.svg" alt="별점" class="star">
+                                    <p class="rate"></p><!-- .rate end -->
+                                    <span class="review"></span><!-- .review end -->
+                                </div><!-- .rating end -->
+                            </div><!-- .text end -->
+                        </div><!-- .item end -->
+
+                        <div class="item">
+                            <img src="img/section06(2).jpg" alt="">
+                            <div class="text">
+                                <span class="brand"></span>
+                                <p class="name"></p>
+                                <div class="pricing">
+                                    <div class="discount"></div><!-- .discount end -->
+                                    <div class="price"></div><!-- .price end -->
+                                    <div class="cost"></div><!-- .cost end -->
+                                </div><!-- .pricing end -->
+                                <div class="rating">
+                                    <img src="img/star.svg" alt="별점" class="star">
+                                    <p class="rate"></p><!-- .rate end -->
+                                    <span class="review"></span><!-- .review end -->
+                                </div><!-- .rating end -->
+                            </div><!-- .text end -->
+                        </div><!-- .item end -->
+                    </div><!-- .item_wrap end -->
+                </div><!-- .content_wrap end -->
+
+            </section><!-- .section-06 end -->
+        </main><!-- .main end -->
+
+        <footer class="footer">
+
+        </footer><!-- .footer end -->
+
+    </div><!-- #wrap end -->
+
+</body>
+
+</html>

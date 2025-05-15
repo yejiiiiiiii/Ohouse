@@ -1,0 +1,81 @@
+@charset "utf-8";
+@import url('reset.css');
+@import url('common.css');
+
+.main {}
+
+.main .main_visual {
+    width: 100vh;
+    height: 8rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.main .main_visual .image_box {}
+
+.main .main_visual .image_box img {}
+
+.main .main_visual .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main .main_visual .text h2 {
+    font-size: 3.6rem;
+    display: block;
+}
+
+.main .main_visual .text .button {}
+
+.main .main_visual .text .button a {}
+
+.main .main_visual .text .tag {
+    display: flex;
+    align-items: center;
+}
+
+.main .main_visual .text .tag img {
+    width: 2.4rem;
+    border-radius: 50%;
+}
+
+.main .main_visual .text .tag span {}
+
+.section .title a {
+    color: #35C5F0;
+    font-size: 2rem;
+}
+
+.section-01 {
+    max-width: 168rem;
+    width: calc(100% - 2rem);
+    margin: 0 auto;
+}
+
+.section-01 .title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-01 .title h3 {}
+
+.section-01 .title a {}
+
+.section-01 .item_wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-01 .item_wrap .item {
+    width: 25%;
+}
+
+.section-01 .item_wrap .item img {}
+
+.section-01 .item_wrap .item p {} 

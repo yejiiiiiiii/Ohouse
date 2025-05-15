@@ -1,0 +1,71 @@
+ <main class="main">
+            <section class="main_visual">
+                <div class="inner">
+                    <div class="image_box">
+                        <img src="img/173068539147785930.svg" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>월간집들이 | 이 달의 집들이를 소개합니다 💎</h2>
+                        <button type="button" class="button">
+                            <a href="#">자세히 보러가기</a>
+                        </button>
+                        <div class="tag">
+                            <img src="img/254302779379840.jpg" alt="">
+                            <span>집들이에디터</span>
+                        </div>
+                    </div><!-- .text end -->
+                </div><!-- .inner end -->
+            </section><!-- .main_visual end -->
+
+            <section class="section-01">
+                <div class="inner">
+                    <div class="title">
+                        <h3>오늘의 추천 집들이 구경해보세요🧐</h3>
+                        <a href="#">더보기</a>
+                    </div><!-- .title end -->
+                    <div class="item_wrap">
+                        <div class="item">
+                            <img src="img/349525045006400.jpg" alt="">
+                            <p>우드+패브릭으로 감성 충만하게 채운 4평 방 스타일링법</p>
+                        </div><!-- .item end -->
+                        <div class="item">
+                            <img src="img/339278655709312.jpg" alt="">
+                            <p>36년 된 구축, 체리몰딩 그대로 감각적인 빈티지 무드 완성!</p>
+                        </div><!-- .item end -->
+                        <div class="item">
+                            <img src="img/174497317415815607.jpg" alt="">
+                            <p>[왓츠인마이홈] 대체 불가능한 무드!✨ 진한 빈티지 감성템 10</p>
+                        </div><!-- .item end -->
+                        <div class="item">
+                            <img src="img/173753042937101049.jpg" alt="">
+                            <p>방 꾸미기에 남들보다 몇 억배😮는 진심인 나의 기록!✍️</p>
+                        </div><!-- .item end -->
+                    </div><!-- .item_wrap end -->
+                </div><!-- .inner end -->
+            </section><!-- .section-01 end -->
+
+            <section class="section-02">
+                <div class="inner">
+                    <div class="title">
+                        <h3>오늘의딜</h3>
+                        <div class="timer">
+                            <img src="img/timer.svg" alt="">
+                            <!-- 타이머 script code 사용 예정 -->
+                        </div><!-- .timer end -->
+                        <p>기간 한정 최저가 도전!</p>
+                        <button type="button" class="button">
+                            판매상품 보러가기
+                        </button>
+                    </div><!-- .title end -->
+
+                    <div class="swiper sec02_Swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/section02(1).jpg" alt="">
+                            </div><!-- swiper-slide -->
+                        </div><!-- swiper-wrapper -->
+                        <div class="swiper-pagination"></div>
+                    </div><!-- sec02_Swiper -->
+                </div><!-- .inner end -->
+            </section><!-- .section-02 end -->
+        </main><!-- .main end -->
