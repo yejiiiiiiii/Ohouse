@@ -2,46 +2,85 @@
 @import url('reset.css');
 @import url('common.css');
 
-.main {}
+.main_visual {
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
+}
 
-.main .main_visual {
-    width: 100vh;
-    height: 8rem;
-    margin: 0 auto;
+.main_visual .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main_visual .image_box {
     position: relative;
 }
 
-.main .main_visual .image_box {}
+.main_visual .image_box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
 
-.main .main_visual .image_box img {}
+.main_visual .image_box .tag {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.4rem;
+}
 
-.main .main_visual .text {
+.main_visual .image_box .tag img {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+}
+
+.main_visual .image_box .tag span {}
+
+
+.main_visual .text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    max-width: 40rem;
+    text-align: center;
 }
 
-.main .main_visual .text h2 {
+.main_visual .text h2 {
     font-size: 3.6rem;
-    display: block;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
 }
 
-.main .main_visual .text .button {}
-
-.main .main_visual .text .button a {}
-
-.main .main_visual .text .tag {
-    display: flex;
-    align-items: center;
+.main_visual .text .button {
+    border: none;
+    background-color: inherit;
 }
 
-.main .main_visual .text .tag img {
-    width: 2.4rem;
-    border-radius: 50%;
+.main_visual .text .button a {
+    display: inline-block;
+    padding: 1.2rem 2.4rem;
+    background-color: #35C5F0;
+    color: #fff;
+    border-radius: 0.4rem;
+    font-size: 1.6rem;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
 }
 
-.main .main_visual .text .tag span {}
+
+.section {
+    margin-top: 12rem;
+}
 
 .section .title a {
     color: #35C5F0;
@@ -78,4 +117,4 @@
 
 .section-01 .item_wrap .item img {}
 
-.section-01 .item_wrap .item p {} 
+.section-01 .item_wrap .item p {}
