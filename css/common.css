@@ -10,6 +10,7 @@ body {
     height: 6rem;
     background-color: peachpuff;
     position: relative;
+    overflow: visible;
 }
 
 .header .inner {
@@ -19,7 +20,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0 1rem;
+    padding: 1rem 0;
+    position: relative;
+    overflow: visible;
 }
 
 .header .inner .logo {
@@ -29,72 +32,147 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.header .inner .logo img {}
+.header .inner .nav .category {
+    display: flex;
+}
+
+.header .inner .nav .category .menu {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.header .inner .nav .category .menu img {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.header .inner .nav .category .menu p {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #333;
+}
 
 .header .inner .nav {
     font-size: 2rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 5rem;
-
-}
-
-.header .inner .nav .category {
-    display: flex;
-
+    gap: 3rem;
 }
 
 .header .inner .nav .gnb {
     display: flex;
-    gap: 5rem;
+    gap: 3rem;
 }
 
-.header .inner .nav .gnb>li {}
-
-.header .inner .nav .gnb>li .depth-01 {}
+.header .inner .nav .gnb>li {
+    position: relative;
+}
 
 .header .inner .nav .gnb>li .depth-02 {
-    display: flex;
-    gap: 4rem;
+    max-width: 168rem;
+    width: calc(100% - 2rem);
+
     display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+   
+    background: #fff;
+    padding: 0.8rem 0;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    justify-content: center;
+    gap: 3rem;
+    white-space: nowrap;
 }
 
-.header .inner .nav .gnb>li .depth-02 li {}
+.header .inner .nav .gnb>li.active .depth-02 {
+    display: flex;
+}
+
+.header .inner .popular-search {
+    font-size: 1.6rem;
+    color: #333;
+    line-height: 3.6rem;
+
+    margin-left: 2rem;
+}
+
+.header .inner .util .searchbox {
+    display: flex;
+    align-items: center;
+    width: 24rem;
+    height: 3.6rem;
+    padding: 0 1rem;
+    background: #fff;
+    border: 0.1rem solid #e0e0e0;
+    border-radius: 1.8rem;
+    gap: 0.8rem;
+}
+
+.header .inner .util .searchbox input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.header .inner .util .searchbox input::placeholder {
+    color: #aaa;
+}
+
+.header .inner .util .searchbox button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.header .inner .util .searchbox button img {
+    width: 1.6rem;
+    height: 1.6rem;
+}
 
 .header .inner .util {
     display: flex;
     align-items: center;
-    gap: 5rem;
+    gap: 3rem;
     font-size: 1.6rem;
 }
-
-.header .inner .util .searchbox {}
-
-.header .inner .util .cart {}
-
-.header .inner .util .cart img {}
 
 .header .inner .util .user {
     display: flex;
     align-items: center;
-    gap: 5rem;
+    gap: 3rem;
 }
-
-.header .inner .util .user a {}
 
 .header .inner .header_Swiper {
-    margin: 0 auto;
     position: absolute;
     top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
 }
-
-.header .inner .header_Swiper .swiper-wrapper {}
 
 .header .inner .header_Swiper .swiper-wrapper .swiper-slide {
     display: flex;
     align-items: center;
-    gap: 4rem;
+    justify-content: end;
+    gap: 3rem;
+}
+
+.header .inner .header_Swiper .swiper-wrapper .swiper-slide .dropdown {
+    display: inline-flex;
+    align-items: center;
+    background: inherit;
+    border: none;
+    cursor: pointer;
 }
 
 .header .inner .header_Swiper .swiper-wrapper .swiper-slide .text {
@@ -110,10 +188,3 @@ body {
 .header .inner .header_Swiper .swiper-wrapper .swiper-slide .text .down {
     color: #35C5F0;
 }
-
-.header .inner .header_Swiper .swiper-wrapper .swiper-slide .text span {}
-
-.header .inner .header_Swiper .swiper-wrapper .swiper-slide .dropdown {}
-
-.header .inner .header_Swiper .swiper-wrapper .swiper-slide .dropdown img {}
-
